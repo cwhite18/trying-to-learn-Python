@@ -1,0 +1,74 @@
+def generate_resume():
+    # Personal Information
+    name = "John Doe"
+    address = "123 Main Street, City, State, Zip Code"
+    phone = "123-456-7890"
+    email = "john.doe@email.com"
+# Summary
+    summary = "A highly motivated and skilled Python developer with a passion for coding and problem-solving."
+    
+    # Work Experience
+    experience = [
+        {
+            "position": "Python Developer",
+            "company": "Tech Company XYZ",
+            "location": "City, State",
+            "duration": "Jan 2021 - Present",
+            "description": "Developed and maintained Python applications for various projects."
+        },
+        { "position": "Software Engineer",
+            "company": "Software Solutions Inc.",
+            "location": "City, State",
+            "duration": "May 2018 - Dec 2020",
+            "description": "Contributed to the development of software solutions for clients using Python and Django."
+        }
+    ]
+# Education
+    education = [
+        {
+            "degree": "Bachelor of Science in Computer Science",
+            "university": "University ABC",
+            "location": "City, State",
+            "completion": "May 2018"
+        }
+    ]
+    
+    # Skills
+    skills = ["Python", "Django", "Flask", "SQL", "HTML", "CSS"]
+    
+    # Generate the resume text
+    resume_text = f"""
+    \t\t\tResume
+    \t\t\t------
+Personal Information:
+    Name: {name}
+    Address: {address}
+    Phone: {phone}
+    Email: {email}
+    
+    Summary:
+    {summary}
+    
+    Work Experience:
+    ---------------
+    """
+for job in experience:
+        resume_text += f"Position: {job['position']}\n"
+        resume_text += f"Company: {job['company']}, {job['location']}\n"
+        resume_text += f"Duration: {job['duration']}\n"
+        resume_text += f"Description: {job['description']}\n\n"
+    
+    resume_text += "Education:\n----------\n"
+    
+    for edu in education:
+        resume_text += f"Degree: {edu['degree']}\n"
+        resume_text += f"University: {edu['university']}, {edu['location']}\n"
+        resume_text += f"Completion: {edu['completion']}\n\n"
+    
+    resume_text += "Skills:\n-------\n"
+    resume_text += ", ".join(skills)
+
+    return resume_text
+if __name__ == "__main__":
+    resume_content = generate_resume()
+    print(resume_content)
